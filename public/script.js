@@ -128,7 +128,7 @@ feedbackForm.addEventListener('submit', (e) => {
         if(xhr.responseText == 'Success') {
             console.log("Response recieved");
             alert('email sent')
-            //document.location.reload()
+            document.location.reload()
         } else {
             alert('something went wrong')
         }
