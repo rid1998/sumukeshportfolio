@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="author" content="Sumukhesh" >
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./style.css">
+        
+        <title> My Feedback Form</title>
+    </head>
+<body>
+    <header>
+        <h1>Welcome to my Personal Website.</h1>
+            <nav id="navbar">
+                <a href="./index.html">Home</a>
+                <a href="./quotes.html">Quotes</a>
+                <a href="./images.html">Images</a>
+                <a href="./media.html">Media</a>
+                <a href="./timetable.html">Timetable</a>
+                <a href="./form.html">Form</a>
+                <a href="./game.html">Game</a>
+               </nav>
+    </header>
+    <h1 style="text-align: center;" id="feedback-form-heading">Feedback Form</h1>
+    <section id="feedback-form">
+        <form id="form" class="form" >
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" name="firstName"required><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name" name="lastName" >
+            <label for="email" >Email</label><br>
+            <input type="text" id="email" name="email" placeholder="Enter Your Email id" onchange="validateEmail()" name="email"><br>
+            <label for="phone-number">Phone-number </label><br>
+            <input type="tel" id="number" name="number" minlength="10" placeholder="Enter Your Mobile number" onchange="validatePhoneNumber()" name="phoneNum"><br>
+            <label for="address">Address</label><br>
+            <input type="text" name="address" id="address" placeholder="Enter Your Address" name="address" optional><br>
+            <p>Did You Like my Website ?</p>
+            <input type="radio" id="yes" name="website-feedback" >
+            <label for="">Yes</label>
+            <input type="radio" id="no" name="website-feedback">
+            <label for="">No</label><br><br>
+            <label for="comments" style="font-weight: large;">Comments</label><br><br>
+            <textarea name="comments" id="comment" class="input" placeholder="Feel free to Comment on my website..." ></textarea>  
+            <input type="submit" id="submit" value="Submit" onclick=" postFormData()">
+        </form>
+    </section>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <article id="footer">
+        <h4>Contact Us at support@sumukesh.com</h4>
+        <p> This Webpage has Copyrights. TM</p>
+    </article>
+</footer>
+</html>

@@ -1,0 +1,309 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(./assets/bg-img.jpg);
+    background-size: cover;
+    position: relative;
+  }
+
+header {
+    display: flex;
+    text-align: left;
+    padding: 2rem;
+    
+}
+
+header h1 {
+    font-style:oblique;
+    padding: 10px;
+    background-color: rgba(154, 71, 79, 0.537);
+    border-radius: 10px;
+}
+
+#navbar {
+    text-align: center;
+    background-color: #609ae69c;
+    border-radius: 10px;
+}
+
+nav a {
+    padding: 10px;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    margin: auto;
+}
+
+nav a:hover {
+    background-color: #8BA4BA;
+    border-radius: 10px;
+}
+
+nav {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+nav h1 {
+    text-align: center;
+    font-weight: 600;
+} 
+ 
+figure img{
+    width:300px;
+    height:400px;
+    padding: 2rem 2rem;
+    border-radius: 60px;
+}
+
+#bio {
+    margin-left: 20px;
+    margin-bottom: 400px;
+    height: 100px;
+}
+
+#bio-text{
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 700px;
+    float: left;
+    padding: 10px;
+    background-color: rgba(239, 146, 103, 0.6);
+    border-radius: 20px;
+    font-weight: 400;
+}
+
+#quote {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: rgba(236, 133, 86, 0.683);
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+
+
+#quote-text {
+    font-size: large;
+}
+
+#bio-img{
+    float: right;
+}
+
+.game-canvas {
+    display: table;
+    border-spacing: 20px;
+    justify-content: center;
+    margin: auto;
+    background-color: #8BA4BA;
+    border-radius: 20px;
+}
+
+.game-canvas-heading {
+display: table-caption;
+text-align: center;
+
+}
+
+#canvas {
+    background-color: #ccc; 
+    width:480px;
+    height:250px;
+    border-radius: 20px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+#start-btn {
+  width: 20%;
+  background-color: #065708;
+  font-weight:300;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#stop-btn {
+  width: 20%;
+  background-color: #990404;
+  font-weight:300;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}   
+
+.img-table {
+        display: table;
+        border-spacing: 20px;
+        justify-content: center;
+        margin: auto;
+        background-color: #8BA4BA;
+        border-radius: 20px;
+        margin-bottom: 20px;
+}
+
+.img-table-caption {
+    display: table-caption;
+    text-align: center;
+    
+}
+
+.row {
+    display: table-row;
+}
+
+.row > * {
+    display: table-cell;
+    text-align: center; 
+}
+
+#image {
+    transition: transform .4s;
+    border-radius: 20px; 
+} 
+
+/* This is onHover effect for the Images which Increases the Img size to 1.5 times when cursor is hovered on it */
+
+#image:hover {
+    transform: scale(1.5);
+}
+
+#media {
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+#audio {
+    margin: 4em;
+    padding: 20px;
+}
+
+#video {
+    margin-left: 4em;
+    border-radius: 20px;
+}
+
+#timetable {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+
+}
+
+#table {
+    width: 90%;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 2px;
+    background-color: rgba(230, 226, 225, 0.671);
+}
+
+
+th {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #1c4869db;
+    color: black;
+    transition: transform 0.4s;
+
+}
+
+th:hover {
+    background-color: #0a273d;
+    color: #ffff;
+    transform: scale(1.5);
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1px;
+    transition: transform 0.4s;
+}
+
+td:hover {
+    background-color: white;
+    transform: scale(1.5);
+}
+
+#feedback-form {
+    display: flex;
+    justify-content: center;
+    margin-right: 14em;
+    margin-bottom: 2em;
+}
+
+
+#fname,#lname,#email, #number, #address {
+    width: 200%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+textarea {
+    height: 200px;
+    width: 200%;
+}
+
+#submit {
+    width: 200%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.scroll-top {
+    position: absolute;
+    top: 120vh;
+    bottom: 2rem;
+    right: 1rem;
+  }
+  
+  .scroll-top__link {
+    position: sticky;
+    top: 85vh;
+    text-decoration:none;
+    border-radius: .25rem;
+    background-color: rgb(11, 49, 79);
+    padding:1rem;
+    color: white;
+    font-weight:700;
+    opacity:.3;
+  }
+  
+  .scroll-top__link:hover {
+    opacity: initial;
+  }
+
+#footer {
+    text-align: center;
+    opacity: 0.5;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    background: rgb(72, 69, 69);
+    color: white;
+}
