@@ -1,10 +1,33 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//const { json } = require('express');
 const nodemailer = require('nodemailer');
-var fs = require('fs')
+const mongoose = require('mongoose');
+const userRoutes = require('./routes/userFeedback')
 
+const uri = "mongodb+srv://sumukhesh:secure@cluster0.vbtlp.mongodb.net/test";
 const app = express();
+
+mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => {
+  console.log(`DB CONNECTED`);
+})
+.catch((err) => {
+  console.log(err);
+});
+
+
+
+// const { MongoClient } = require('mongodb');
+// 
+//     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//     client.connect(err => {
+//       const collection = client.db("website").collection("users");
+//       var db = collection.dbName;
+//       console.log(`our db is ${db}`);
+//     });
+//     //client.close()
+
+
 
 const port = process.env.PORT || 3000;
 // if(port == null || port == ""){
@@ -33,16 +56,21 @@ app.get('/', (req, res) => {
   res.send('Hello world!')
 })
 
+app.use('/', userRoutes)
+
 app.post('/form', (req, res) => {
   if(req.body) {
     console.log(req.body);
     
-    fs.appendFileSync('./user-data.json', JSON.stringify(req.body), (err) => {
-        if(err){
-          console.log(err);
-        }
-        console.log('Data saved to JSON file');
-      })
+    // fs.appendFileSync('./user-data.json', JSON.stringify(req.body), (err) => {
+    //     if(err){
+    //       console.log(err);
+    //     }
+    //     console.log('Data saved to JSON file');
+    //   })
+
+
+
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -59,7 +87,7 @@ app.post('/form', (req, res) => {
       text: `Dear ${req.body.firstName}, Thank You for Your Feedback! - From sumukesh.herokuapp.com`
     }
 
-    transporter.sendMail(mailOptions, (err, info) => {
+   transporter.sendMail(mailOptions, (err, info) => {
       console.log('This is reachable');
       if(err){
         console.log(err);
@@ -67,7 +95,7 @@ app.post('/form', (req, res) => {
       } else {
         console.log('Email sent !!');
         res.send('Success');
-
+        
       }
     })
     

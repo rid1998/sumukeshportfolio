@@ -124,11 +124,16 @@ feedbackForm.addEventListener('submit', (e) => {
     xhr.open('POST', 'http://localhost:3000/form');
     xhr.setRequestHeader('content-type', 'application/json')
     xhr.onload = function() {
-        console.log(xhr.responseText);
+
+        // var jsonResponse = xhr.response;
+        // console.log('This is reponse obj ==> ', jsonResponse);
+        
         if(xhr.responseText == 'Success') {
             console.log("Response recieved");
+
             alert('email sent')
-            document.location.reload()
+            //alert(jsonResponse.UC)
+            location.replace ('../response.html')
         } else {
             alert('something went wrong')
         }
@@ -137,8 +142,25 @@ feedbackForm.addEventListener('submit', (e) => {
     xhr.send(JSON.stringify(formData))
 })
 
-function postFormData () {
+function responseText() {
     
+    let xhr = new XMLHttpRequest;
+    xhr.open('GET', 'http://localhost:3000/usercount');
+    xhr.send();
+    xhr.onload = function () {
+        if (xhr.status != 200) { // analyze HTTP status of the response
+            alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+          } else { // show the result
+            var response = document.getElementById('response');
+            var count = JSON.parse(xhr.response).userCount
+            response.innerHTML = `Thank you for your feedback, you are the ${count} th customer to provide feedback`
+            //alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
+          }
+    }
+
+
+    console.log('This is responseTxt');
+   
 }
 
 function validateEmail () {
